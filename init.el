@@ -9,6 +9,10 @@
 (global-display-line-numbers-mode)          ; Line numbers
 (setq display-line-numbers-width-start 1)   ; Fixed width for line number column
 
+;; Set transparent background
+(set-frame-parameter (selected-frame) 'alpha '(98 . 98))
+(add-to-list 'default-frame-alist '(alpha . (98 . 98)))
+
 ;; Better scrolling
 (setq scroll-step 1)
 (setq scroll-conservatively 101)
