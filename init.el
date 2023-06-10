@@ -37,6 +37,10 @@
   :config
   (load-theme 'doom-tokyo-night t))
 
+;; Doom status line
+(use-package doom-modeline
+  :init (doom-modeline-mode 1))
+
 ;; Evil
 (use-package evil)
 (require 'evil)
