@@ -17,6 +17,10 @@
 (setq scroll-step 1)
 (setq scroll-conservatively 101)
 
+;; Fonts
+(add-to-list 'default-frame-alist
+	     '(font . "JetBrainsMono NF-10"))
+
 ;; MELPA package archive
 (require 'package)
 (add-to-list 'package-archives '("gnu"   . "https://elpa.gnu.org/packages/"))
