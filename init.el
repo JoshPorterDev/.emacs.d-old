@@ -6,8 +6,6 @@
 (menu-bar-mode -1)                          ; Disable menu bar
 (scroll-bar-mode -1)                        ; Disable scroll bar
 (setq ring-bell-function 'ignore)           ; Disable bell
-(global-display-line-numbers-mode)          ; Line numbers
-(setq display-line-numbers-width-start 1)   ; Fixed width for line number column
 
 ;; Set transparent background
 (set-frame-parameter (selected-frame) 'alpha '(98 . 98))
@@ -35,6 +33,12 @@
   (package-install 'use-package))
 (require 'use-package)
 (setq use-package-always-ensure t)
+
+(use-package display-line-numbers
+  :ensure nil
+  :hook (prog-mode . display-line-numbers-mode)
+  :config
+  (setq-default display-line-numbers-width 3))
 
 ;; Doom themes
 (use-package doom-themes
