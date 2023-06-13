@@ -6,6 +6,8 @@
 (menu-bar-mode -1)                          ; Disable menu bar
 (scroll-bar-mode -1)                        ; Disable scroll bar
 (setq ring-bell-function 'ignore)           ; Disable bell
+(display-time-mode 1)
+(display-battery-mode 1)
 
 ;; Set transparent background
 (set-frame-parameter (selected-frame) 'alpha '(98 . 98))
