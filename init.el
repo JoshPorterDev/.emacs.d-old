@@ -14,6 +14,8 @@
 ;; Better scrolling
 (setq scroll-step 1)
 (setq scroll-conservatively 101)
+(setq fast-but-imprecise-scrolling nil)
+(setq jit-lock-defer-time 0)
 
 ;; Fonts
 (add-to-list 'default-frame-alist
@@ -34,11 +36,23 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+(use-package mwheel
+  :ensure nil
+  :config
+  (setq mouse-wheel-scroll-amount '(3 ((shift) . 1) ((control) . nil)))
+  (setq mouse-wheel-progressive-speed nil))
+
 (use-package display-line-numbers
   :ensure nil
   :hook (prog-mode . display-line-numbers-mode)
   :config
   (setq-default display-line-numbers-width 3))
+
+(use-package gcmh
+  :demand t
+  :config
+  (setq gcmh-low-cons-threshold (* 16 1024 1024))
+  (gcmh-mode +1))
 
 ;; Doom themes
 (use-package doom-themes
