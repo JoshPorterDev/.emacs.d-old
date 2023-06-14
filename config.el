@@ -117,3 +117,7 @@
   :config
   (setq gcmh-low-cons-threshold (* 16 1024 1024))
   (gcmh-mode +1))
+
+(use-package org-bullets
+  :after org
+  :hook (org-mode . org-bullets-mode))
