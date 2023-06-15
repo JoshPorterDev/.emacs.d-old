@@ -22,6 +22,7 @@
   - [[#whichkey][Whichkey]]
   - [[#magit][Magit]]
   - [[#gcmh][GCMH]]
+  - [[#projectile][Projectile]]
 - [[#keybinds][Keybinds]]
   - [[#general][General]]
 - [[#org-mode][Org Mode]]
@@ -250,6 +251,21 @@
 
 #+end_src
 
+** Projectile
+#+begin_src emacs-lisp
+
+(use-package projectile
+  :diminish projectile-mode
+  :config (projectile-mode)
+  :custom ((projectile-completion-system 'ivy))
+  :bind-keymap
+  ("C-c p" . projectile-command-map)
+  :init
+  (when (file-directory-p "~/dev")
+    (setq projecttile-project-search-path '("~/dev")))
+  (setq projectile-switch-project-action #'projectile-dired))
+
+#+end_src
 * Keybinds
 ** General
 #+begin_src emacs-lisp

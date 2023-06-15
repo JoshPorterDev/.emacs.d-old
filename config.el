@@ -130,6 +130,17 @@
   (setq gcmh-low-cons-threshold (* 16 1024 1024))
   (gcmh-mode +1))
 
+(use-package projectile
+  :diminish projectile-mode
+  :config (projectile-mode)
+  :custom ((projectile-completion-system 'ivy))
+  :bind-keymap
+  ("C-c p" . projectile-command-map)
+  :init
+  (when (file-directory-p "~/dev")
+    (setq projecttile-project-search-path '("~/dev")))
+  (setq projectile-switch-project-action #'projectile-dired))
+
 (use-package general
   :config
   (general-evil-setup)
