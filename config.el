@@ -59,6 +59,12 @@
   :config
   (setq neo-theme 'icons))
 
+(use-package dashboard
+  :config
+  (dashboard-setup-startup-hook)
+  (setq dashboard-startup-banner 'logo)
+  (setq dashboard-banner-logo-title "Josh's Emacs"))
+
 (use-package evil
   :init
   (setq evil-want-integration t)

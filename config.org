@@ -118,6 +118,16 @@
 
 #+end_src
 
+** Dashboard
+#+begin_src emacs-lisp
+
+(use-package dashboard
+  :config
+  (dashboard-setup-startup-hook)
+  (setq dashboard-startup-banner 'logo)
+  (setq dashboard-banner-logo-title "Josh's Emacs"))
+
+#+end_src
 * Evil
 #+begin_src emacs-lisp
 
