@@ -148,3 +148,7 @@
 (use-package org-bullets
   :after org
   :hook (org-mode . org-bullets-mode))
+
+(use-package toc-org
+    :commands toc-org-enable
+    :init (add-hook 'org-mode-hook 'toc-org-enable))

@@ -2,6 +2,32 @@
 #+AUTHOR: Josh Porter
 #+STARTUP: showeverything
 
+* Table of Contents :toc:
+- [[#package-manager][Package Manager]]
+- [[#general-settings][General Settings]]
+  - [[#better-scrolling][Better Scrolling]]
+  - [[#better-mouse-scrolling][Better Mouse Scrolling]]
+- [[#ui][UI]]
+  - [[#fonts][Fonts]]
+  - [[#theme][Theme]]
+  - [[#modeline][Modeline]]
+  - [[#transparency][Transparency]]
+  - [[#line-numbers][Line Numbers]]
+  - [[#neotree][Neotree]]
+  - [[#dashboard][Dashboard]]
+- [[#evil][Evil]]
+- [[#additional-packages][Additional Packages]]
+  - [[#ivy][Ivy]]
+  - [[#counsel][Counsel]]
+  - [[#whichkey][Whichkey]]
+  - [[#magit][Magit]]
+  - [[#gcmh][GCMH]]
+- [[#keybinds][Keybinds]]
+  - [[#general][General]]
+- [[#org-mode][Org Mode]]
+  - [[#org-mode-bullets][Org Mode Bullets]]
+  - [[#table-of-contents][Table of Contents]]
+
 * Package Manager
 #+begin_src emacs-lisp
 
@@ -252,5 +278,14 @@
 (use-package org-bullets
   :after org
   :hook (org-mode . org-bullets-mode))
+
+#+end_src
+
+** Table of Contents
+#+begin_src emacs-lisp
+
+(use-package toc-org
+    :commands toc-org-enable
+    :init (add-hook 'org-mode-hook 'toc-org-enable))
 
 #+end_src
