@@ -53,6 +53,12 @@
   :config
   (setq-default display-line-numbers-width 3))
 
+(use-package all-the-icons)
+
+(use-package neotree
+  :config
+  (setq neo-theme 'icons))
+
 (use-package evil
   :init
   (setq evil-want-integration t)

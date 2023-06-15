@@ -103,6 +103,21 @@
 
 #+end_src
 
+** Neotree
+#+begin_src emacs-lisp
+
+(use-package all-the-icons)
+
+#+end_src
+
+#+begin_src emacs-lisp
+
+(use-package neotree
+  :config
+  (setq neo-theme 'icons))
+
+#+end_src
+
 * Evil
 #+begin_src emacs-lisp
 
