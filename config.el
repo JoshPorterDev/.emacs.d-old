@@ -124,6 +124,21 @@
   (setq gcmh-low-cons-threshold (* 16 1024 1024))
   (gcmh-mode +1))
 
+(use-package general
+  :config
+  (general-evil-setup)
+
+  (general-create-definer josh/leader-keys
+    :states '(normal insert visual emacs)
+    :keymaps 'override
+    :prefix "SPC"
+    :global-prefix "M-SPC")
+
+  (josh/leader-keys
+    "e" '(neotree-toggle :wk "neotree-toggle")
+    "tt" '(counsel-load-theme :wk "switch theme")
+    "cc" '(comment-or-uncomment-region :wk "comment line")))
+
 (use-package org-bullets
   :after org
   :hook (org-mode . org-bullets-mode))

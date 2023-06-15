@@ -214,6 +214,27 @@
 
 #+end_src
 
+* Keybinds
+** General
+#+begin_src emacs-lisp
+
+(use-package general
+  :config
+  (general-evil-setup)
+
+  (general-create-definer josh/leader-keys
+    :states '(normal insert visual emacs)
+    :keymaps 'override
+    :prefix "SPC"
+    :global-prefix "M-SPC")
+
+  (josh/leader-keys
+    "e" '(neotree-toggle :wk "neotree-toggle")
+    "tt" '(counsel-load-theme :wk "switch theme")
+    "cc" '(comment-or-uncomment-region :wk "comment line")))
+
+#+end_src
+
 * Org Mode
 ** Org Mode Bullets
 #+begin_src emacs-lisp
