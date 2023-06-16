@@ -19,6 +19,7 @@
   - [[#eglot][Eglot]]
   - [[#corfu][Corfu]]
   - [[#languages][Languages]]
+  - [[#treesitter][Treesitter]]
 - [[#evil][Evil]]
 - [[#additional-packages][Additional Packages]]
   - [[#ivy][Ivy]]
@@ -204,6 +205,19 @@
 #+begin_src emacs-lisp
 
 (use-package rust-mode)
+
+#+end_src
+
+** Treesitter
+#+begin_src emacs-lisp
+
+(use-package tree-sitter
+  :after tree-sitter-langs
+  :config
+  (global-tree-sitter-mode)
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
+
+(use-package tree-sitter-langs)
 
 #+end_src
 

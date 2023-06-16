@@ -94,6 +94,14 @@
 
 (use-package rust-mode)
 
+(use-package tree-sitter
+  :after tree-sitter-langs
+  :config
+  (global-tree-sitter-mode)
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
+
+(use-package tree-sitter-langs)
+
 (use-package evil
   :init
   (setq evil-want-integration t)
