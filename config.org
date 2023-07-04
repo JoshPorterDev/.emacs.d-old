@@ -409,18 +409,22 @@
     :global-prefix "M-SPC")
 
   (josh/leader-keys
-    "e" '(neotree-toggle :wk "neotree-toggle")
-    "tt" '(counsel-load-theme :wk "switch theme")
     "cc" '(comment-or-uncomment-region :wk "comment line"))
 
   (josh/leader-keys
-    "." '(find-file :wk "Find file")
+    "." '(counsel-find-file :wk "Find file")
     "f c" '((lambda () (interactive) (find-file "~/.emacs.d/config.org")) :wk "Edit emacs config")
     "f r" '(counsel-recentf :wk "Find recent files"))
 
   (josh/leader-keys
+    "t" '(:ignore t :wk "Toggle")
+    "t n" '(neotree-toggle :wk "neotree-toggle")
+    "t t" '(counsel-load-theme :wk "switch theme")
+    "t v" '(vterm-toggle :wk "Toggle vterm"))
+
+  (josh/leader-keys
     "b" '(:ignore t :wk "buffer")
-    "b b" '(switch-to-buffer :wk "Switch buffer")
+    "b b" '(counsel-switch-buffer :wk "Switch buffer")
     "b i" '(ibuffer :wk "Ibuffer")
     "b k" '(kill-this-buffer :wk "Kill this buffer")
     "b n" '(next-buffer :wk "Next buffer")
