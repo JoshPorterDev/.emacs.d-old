@@ -241,7 +241,6 @@
     :global-prefix "M-SPC")
 
   (josh/leader-keys
-    ;;"e" '(neotree-toggle :wk "neotree-toggle")
     "cc" '(comment-or-uncomment-region :wk "comment line"))
 
   (josh/leader-keys
