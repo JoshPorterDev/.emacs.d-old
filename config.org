@@ -209,7 +209,14 @@
 *** Rust
 #+begin_src emacs-lisp
 
-(use-package rust-mode)
+(use-package rust-mode
+  :bind (("<f6>" . josh/rust-format-buffer))
+	:config
+	(require 'rust-rustfmt)
+	(defun josh/rust-format-buffer ()
+	  (interactive)
+		(rust-format-buffer)
+		(save-buffer)))
 
 #+end_src
 

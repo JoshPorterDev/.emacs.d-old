@@ -97,7 +97,16 @@
   (global-corfu-mode)
   (corfu-popupinfo-mode))
 
-(use-package rust-mode)
+(use-package go-mode)
+
+(use-package rust-mode
+  :bind (("<f6>" . josh/rust-format-buffer))
+	:config
+	(require 'rust-rustfmt)
+	(defun josh/rust-format-buffer ()
+	  (interactive)
+		(rust-format-buffer)
+		(save-buffer)))
 
 (use-package tree-sitter
   :after tree-sitter-langs
