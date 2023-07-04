@@ -210,6 +210,13 @@
 #+end_src
 
 ** Languages
+*** Go
+#+begin_src emacs-lisp
+
+(use-package go-mode)
+
+#+end_src
+
 *** Rust
 #+begin_src emacs-lisp
 
