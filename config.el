@@ -56,8 +56,8 @@
 (use-package all-the-icons)
 
 (use-package neotree
-  :config
-  (setq neo-theme 'icons))
+	:config
+	(setq neo-theme 'nerd))
 
 (use-package dashboard
   :config

@@ -146,8 +146,8 @@
 #+begin_src emacs-lisp
 
 (use-package neotree
-  :config
-  (setq neo-theme 'icons))
+	:config
+	(setq neo-theme 'nerd))
 
 #+end_src
 
