@@ -18,6 +18,9 @@
 (menu-bar-mode -1)                          ; Disable menu bar
 (scroll-bar-mode -1)                        ; Disable scroll bar
 (setq ring-bell-function 'ignore)           ; Disable bell
+(setq-default tab-width 2)
+(setq-default evil-shift-width tab-width)
+(electric-pair-mode)
 
 (setq scroll-step 1)
 (setq scroll-conservatively 101)
