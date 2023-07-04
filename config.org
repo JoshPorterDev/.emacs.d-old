@@ -29,6 +29,7 @@
   - [[#git-gutter][Git Gutter]]
   - [[#gcmh][GCMH]]
   - [[#projectile][Projectile]]
+  - [[#vterm][Vterm]]
 - [[#keybinds][Keybinds]]
   - [[#general][General]]
 - [[#org-mode][Org Mode]]
@@ -364,6 +365,35 @@
   (setq projectile-switch-project-action #'projectile-dired))
 
 #+end_src
+
+** Vterm
+#+begin_src emacs-lisp
+
+(use-package vterm
+  :config
+  (setq shell-file-name "/usr/bin/zsh"))
+
+(use-package vterm-toggle
+  :after vterm
+  :config
+  (setq vterm-toggle-fullscreen-p 1)
+  (setq vterm-toggle-scope 'project)
+  (add-to-list 'display-buffer-alist
+               '((lambda (buffer-or-name _)
+                     (let ((buffer (get-buffer buffer-or-name)))
+                       (with-current-buffer buffer
+                         (or (equal major-mode 'vterm-mode)
+                             (string-prefix-p vterm-buffer-name (buffer-name buffer))))))
+                  (display-buffer-reuse-window display-buffer-at-bottom)
+                  ;;(display-buffer-reuse-window display-buffer-in-direction)
+                  ;;display-buffer-in-direction/direction/dedicated is added in emacs27
+                  ;;(direction . bottom)
+                  ;;(dedicated . t) ;dedicated is supported in emacs27
+                  (reusable-frames . visible)
+                  (window-height . 0.3))))
+
+#+end_src
+
 * Keybinds
 ** General
 #+begin_src emacs-lisp
